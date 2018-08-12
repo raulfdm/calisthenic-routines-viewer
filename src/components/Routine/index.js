@@ -17,7 +17,7 @@ const StyledButton = styled(Button)`
   width: 100%;
 `;
 
-export default class Main extends Component {
+export default class Routine extends Component {
   state = {
     open: false,
     currentImg: '',
@@ -37,7 +37,7 @@ export default class Main extends Component {
   };
 
   render() {
-    const { routine } = this.props;
+    const { routine, shouldRenderCycle } = this.props;
 
     return (
       <React.Fragment>
@@ -61,6 +61,7 @@ export default class Main extends Component {
           alt={this.state.alt}
           currentImg={this.state.currentImg}
           handleClose={this.handleClose}
+          shouldRenderCycle={shouldRenderCycle}
         />
       </React.Fragment>
     );
