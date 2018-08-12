@@ -64,8 +64,8 @@ export default props => {
       <ContainerLink childNum={2} onClick={GoTo('beginner')}>
         <SquareTitle>Beginner</SquareTitle>
       </ContainerLink>
-      <ContainerLink childNum={3} onClick={GoTo('medior')}>
-        <SquareTitle>Medior</SquareTitle>
+      <ContainerLink childNum={3} onClick={GoTo('intermediate')}>
+        <SquareTitle>Intermediate</SquareTitle>
       </ContainerLink>
       <ContainerLink childNum={4} onClick={GoTo('advanced')}>
         <SquareTitle>Advanced</SquareTitle>

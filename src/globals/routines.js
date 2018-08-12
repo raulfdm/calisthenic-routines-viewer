@@ -87,8 +87,8 @@ export default {
       }
     ]
   },
-  medior: {
-    title: 'Medior Routines',
+  intermediate: {
+    title: 'Intermediate Routines',
     exercises: []
   },
   advanced: {
