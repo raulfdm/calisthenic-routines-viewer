@@ -3,6 +3,10 @@ import styled from 'styled-components';
 
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
+import warmUpBackgroundImg from '../../images/background/warmup.png';
+import beginnerBackgroundImg from '../../images/background/beginner.png';
+import intermediateBackgroundImg from '../../images/background/intermediate.png';
+import advancedBackgroundImg from '../../images/background/advanced.png';
 
 const Container = styled.div`
   display: flex;
@@ -20,19 +24,21 @@ const ContainerLink = styled(ButtonBase)`
   align-items: center;
   justify-content: center;
   &&& {
-    background-color: ${props => {
+    background-image: ${props => {
       const { childNum } = props;
       switch (childNum) {
         case 1:
-          return '#a55eea';
+          return `url(${warmUpBackgroundImg})`;
         case 2:
-          return '#2bcbba';
+          return `url(${beginnerBackgroundImg})`;
         case 3:
-          return '#fd9644';
+          return `url(${intermediateBackgroundImg})`;
         case 4:
-          return '#eb3b5a';
+          return `url(${advancedBackgroundImg})`;
       }
     }};
+    background-size: cover;
+    background-position: bottom;
   }
 `;
 
@@ -53,7 +59,7 @@ export default props => {
   return (
     <Container>
       <ContainerLink childNum={1} onClick={GoTo('warmup')}>
-        <SquareTitle>WarmUp</SquareTitle>
+        <SquareTitle>Warm up</SquareTitle>
       </ContainerLink>
       <ContainerLink childNum={2} onClick={GoTo('beginner')}>
         <SquareTitle>Beginner</SquareTitle>

@@ -96,7 +96,7 @@ export default {
     exercises: []
   },
   warmup: {
-    title: 'Warmup Exercises',
+    title: 'Warm up Exercises',
     exercises: [
       {
         id: 2,
