@@ -24,7 +24,15 @@ ReactDOM.render(
             const { level } = props.match.params;
             const routine = routines[level];
 
-            return <Routine routine={routine} />;
+            /* Don't want render Cycle Component whne it's warm up */
+            const shouldRenderCycle = !/warmup/gi.test(level);
+
+            return (
+              <Routine
+                routine={routine}
+                shouldRenderCycle={shouldRenderCycle}
+              />
+            );
           }}
         />
       </Switch>
