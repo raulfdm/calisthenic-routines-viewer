@@ -11,6 +11,10 @@ const StyledModal = styled(Modal)`
   padding: 1rem;
 `;
 
+const StyledCard = styled(Card)`
+  max-width: 600px;
+`;
+
 class ExerciseModal extends Component {
   state = {
     lockedCycles: false,
@@ -98,7 +102,7 @@ class ExerciseModal extends Component {
 
     return (
       <StyledModal open={open} onClose={handleClose}>
-        <Card>
+        <StyledCard>
           <Photo image={currentImg} title={alt} />
           {shouldRenderCycle && (
             <CycleCounter
@@ -112,7 +116,7 @@ class ExerciseModal extends Component {
               numberOfCycles={this.state.numberOfCycles}
             />
           )}
-        </Card>
+        </StyledCard>
       </StyledModal>
     );
   }
