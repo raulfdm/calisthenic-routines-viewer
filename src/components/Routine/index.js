@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Typography, Button, Modal } from '@material-ui/core';
+import { Typography, Button } from '@material-ui/core';
 
 import ContainerBackButton from '../ContainerBackButton';
-import Photo from '../Photo';
-
-const StyledModal = styled(Modal)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
+import ExerciseModal from '../ExerciseModal';
 
 const RoutineContainer = styled.div`
   display: flex;
@@ -62,14 +56,12 @@ export default class Main extends Component {
             })}
           </RoutineContainer>
         </ContainerBackButton>
-        <StyledModal
-          aria-labelledby="simple-modal-title"
-          aria-describedby="simple-modal-description"
+        <ExerciseModal
           open={this.state.open}
-          onClose={this.handleClose}
-        >
-          <Photo url={this.state.currentImg} alt={this.state.alt} />
-        </StyledModal>
+          alt={this.state.alt}
+          currentImg={this.state.currentImg}
+          handleClose={this.handleClose}
+        />
       </React.Fragment>
     );
   }
