@@ -1,11 +1,21 @@
 {
-  "presets": [
-    "babel-preset-react-native-stage-0/decorator-support"
-  ],
+  "presets": ["babel-preset-react-native-stage-0/decorator-support"],
   "env": {
     "development": {
       "plugins": [
-        "transform-react-jsx-source"
+        "transform-react-jsx-source",
+        [
+          "module-resolver",
+          {
+            "root": ["./src"],
+            "alias": {
+              "screens": "./src/screens",
+              "components": "./src/components",
+              "img": "./src/assets/images",
+              "globals": "./src/globals"
+            }
+          }
+        ]
       ]
     }
   }
