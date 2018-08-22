@@ -1,38 +1,47 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import MainPhotoButton from 'components/MainPhotoButton';
+import SCREENS from 'globals/screens';
 
-export default () => {
+export default props => {
+  const navigateToRoutines = title => () => {
+    const NEW_ROUTINE = Object.assign({}, SCREENS.ROUTINES, { title });
+    props.navigator.push(NEW_ROUTINE);
+  };
   const options = [
     {
       id: 4,
-      text: 'Warm Up',
-      photo: require('images/background/warmup.png'),
+      title: 'Warm Up',
+      photo: require('img/background/warmup.png'),
       path: 'warmup'
     },
     {
       id: 1,
-      text: 'Beginner',
-      photo: require('images/background/beginner.png'),
+      title: 'Beginner',
+      photo: require('img/background/beginner.png'),
       path: 'beginner'
     },
     {
       id: 2,
-      text: 'Intermediate',
-      photo: require('images/background/intermediate.png'),
+      title: 'Intermediate',
+      photo: require('img/background/intermediate.png'),
       path: 'intermediate'
     },
     {
       id: 3,
-      text: 'Advanced',
-      photo: require('images/background/advanced.png'),
+      title: 'Advanced',
+      photo: require('img/background/advanced.png'),
       path: 'advanced'
     }
   ];
   return (
     <View style={styles.container}>
       {options.map(option => (
-        <MainPhotoButton key={option.id} {...option} />
+        <MainPhotoButton
+          key={option.id}
+          {...option}
+          onPress={navigateToRoutines(option.title)}
+        />
       ))}
     </View>
   );
