@@ -7,17 +7,15 @@ import {
   Dimensions,
   TouchableOpacity
 } from 'react-native';
-import { Link } from 'react-router-native';
 
-export default ({ text, photo, path }) => {
+export default ({ text, photo, onPress }) => {
+
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => console.warn('hehe')}>
-        <Link to={`/routine/${path}`}>
-          <ImageBackground source={photo} style={styles.photo}>
-            <Text style={styles.text}>{text}</Text>
-          </ImageBackground>
-        </Link>
+      <TouchableOpacity onPress={onPress}>
+        <ImageBackground source={photo} style={styles.photo}>
+          <Text style={styles.text}>{text}</Text>
+        </ImageBackground>
       </TouchableOpacity>
     </View>
   );
